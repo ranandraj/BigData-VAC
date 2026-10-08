@@ -1,0 +1,184 @@
+name: ar-infotek-bigdata
+services:
+  namenode:
+    image: apache/hadoop:3.4.3
+    container_name: hdfs-namenode
+    hostname: namenode
+    user: "0:0"
+    command: ["/bin/bash","/scripts/HDFS-NAMENODE-CMD.sh"]
+    ports: ["9870:9870","8020:8020"]
+    volumes:
+      - namenode_data:/data
+      - ./config/hdfs/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./scripts/HDFS-NAMENODE-CMD.sh:/scripts/HDFS-NAMENODE-CMD.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:9870/ >/dev/null 2>&1 && pgrep -f 'org.apache.hadoop.hdfs.server.namenode.NameNode' >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+    networks: [bigdata]
+  datanode1:
+    image: apache/hadoop:3.4.3
+    container_name: hdfs-datanode1
+    hostname: datanode1
+    user: "0:0"
+    command: ["/bin/bash","/scripts/HDFS-DATANODE-CMD.sh"]
+    ports: ["9864:9864"]
+    volumes:
+      - datanode1_data:/data
+      - ./config/hdfs/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./scripts/HDFS-DATANODE-CMD.sh:/scripts/HDFS-DATANODE-CMD.sh:ro
+    depends_on:
+      namenode:
+        condition: service_healthy
+    networks: [bigdata]
+  datanode2:
+    image: apache/hadoop:3.4.3
+    container_name: hdfs-datanode2
+    hostname: datanode2
+    user: "0:0"
+    command: ["/bin/bash","/scripts/HDFS-DATANODE-CMD.sh"]
+    ports: ["9865:9864"]
+    volumes:
+      - datanode2_data:/data
+      - ./config/hdfs/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./scripts/HDFS-DATANODE-CMD.sh:/scripts/HDFS-DATANODE-CMD.sh:ro
+    depends_on:
+      namenode:
+        condition: service_healthy
+    networks: [bigdata]
+  datanode3:
+    image: apache/hadoop:3.4.3
+    container_name: hdfs-datanode3
+    hostname: datanode3
+    user: "0:0"
+    command: ["/bin/bash","/scripts/HDFS-DATANODE-CMD.sh"]
+    ports: ["9866:9864"]
+    volumes:
+      - datanode3_data:/data
+      - ./config/hdfs/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml:ro
+      - ./config/hdfs/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml:ro
+      - ./scripts/HDFS-DATANODE-CMD.sh:/scripts/HDFS-DATANODE-CMD.sh:ro
+    depends_on:
+      namenode:
+        condition: service_healthy
+    networks: [bigdata]
+
+  postgres:
+    image: postgres:16
+    container_name: ecommerce-postgres
+    environment: {POSTGRES_DB: ecommerce, POSTGRES_USER: ecommerce, POSTGRES_PASSWORD: ecommerce}
+    command: ["postgres","-c","wal_level=logical","-c","max_replication_slots=10","-c","max_wal_senders=10"]
+    ports: ["5432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data, ./sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro]
+    networks: [bigdata]
+
+  kafka:
+    image: apache/kafka:4.3.1
+    container_name: kafka
+    hostname: kafka
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_LISTENERS: CONTROLLER://:29093,INTERNAL://:29092,EXTERNAL://:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    ports: ["9092:9092"]
+    volumes: [kafka_data:/var/lib/kafka/data]
+    networks: [bigdata]
+
+  debezium:
+    image: quay.io/debezium/connect:3.7
+    container_name: debezium
+    environment:
+      BOOTSTRAP_SERVERS: kafka:29092
+      GROUP_ID: 1
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
+      KEY_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      KEY_CONVERTER_SCHEMAS_ENABLE: "false"
+      VALUE_CONVERTER_SCHEMAS_ENABLE: "false"
+      REST_ADVERTISED_HOST_NAME: debezium
+    ports: ["8083:8083"]
+    depends_on: [kafka, postgres]
+    networks: [bigdata]
+
+  nifi:
+    image: apache/nifi:2.12.0
+    container_name: nifi
+    environment: {NIFI_WEB_HTTPS_PORT: 8443, SINGLE_USER_CREDENTIALS_USERNAME: admin, SINGLE_USER_CREDENTIALS_PASSWORD: BigDataLab123!}
+    ports: ["8443:8443"]
+    volumes:
+      - nifi_data:/opt/nifi/nifi-current/flowfile_repository
+      - ./data:/labdata:ro
+      - ./nifi-output:/laboutput
+    networks: [bigdata]
+
+  flink-jobmanager:
+    build: ./flink
+    image: ar-infotek/flink:2.1-kafka
+    container_name: flink-jobmanager
+    command: jobmanager
+    ports: ["8081:8081"]
+    environment: {JOB_MANAGER_RPC_ADDRESS: flink-jobmanager}
+    networks: [bigdata]
+  flink-taskmanager:
+    build: ./flink
+    image: ar-infotek/flink:2.1-kafka
+    container_name: flink-taskmanager
+    command: taskmanager
+    depends_on: [flink-jobmanager]
+    environment: {JOB_MANAGER_RPC_ADDRESS: flink-jobmanager, TASK_MANAGER_NUMBER_OF_TASK_SLOTS: 2}
+    networks: [bigdata]
+
+  mongodb:
+    image: mongo:8
+    container_name: mongodb
+    ports: ["27017:27017"]
+    volumes: [mongo_data:/data/db]
+    networks: [bigdata]
+  trino:
+    image: trinodb/trino:latest
+    container_name: trino
+    ports: ["8080:8080"]
+    volumes: [./config/trino:/etc/trino:ro]
+    depends_on: [postgres, mongodb]
+    networks: [bigdata]
+  streamlit:
+    build: ./streamlit
+    container_name: streamlit
+    ports: ["8501:8501"]
+    depends_on: [trino, mongodb]
+    networks: [bigdata]
+  airflow:
+    image: apache/airflow:3.3.2
+    container_name: airflow
+    command: standalone
+    environment: {AIRFLOW__CORE__LOAD_EXAMPLES: "false", AIRFLOW__CORE__EXECUTOR: SequentialExecutor}
+    ports: ["8085:8080"]
+    volumes: [airflow_data:/opt/airflow, ./airflow/dags:/opt/airflow/dags]
+    networks: [bigdata]
+
+networks: {bigdata: {driver: bridge}}
+volumes:
+  namenode_data:
+  datanode1_data:
+  datanode2_data:
+  datanode3_data:
+  postgres_data:
+  kafka_data:
+  nifi_data:
+  mongo_data:
+  airflow_data:

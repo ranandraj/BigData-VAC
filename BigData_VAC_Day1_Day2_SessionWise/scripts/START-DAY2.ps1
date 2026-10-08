@@ -1,0 +1,1 @@
+Set-Location "$PSScriptRoot\.."; docker compose stop nifi debezium; docker compose up -d namenode datanode1 datanode2 datanode3 postgres kafka flink-jobmanager flink-taskmanager mongodb trino streamlit airflow; docker compose ps
