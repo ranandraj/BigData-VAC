@@ -25,17 +25,16 @@ Write-Host "Source connection:" -ForegroundColor Cyan
 Select-String -Path $AppFile -Pattern 'def trino_conn'
 
 Write-Host "`nRebuilding and recreating only Streamlit..." -ForegroundColor Cyan
-docker compose up -d --build --force-recreate streamlit
-if ($LASTEXITCODE -ne 0) { throw "Streamlit build/recreation failed." }
-
 Write-Host "`nVerifying the running container..." -ForegroundColor Cyan
-$verify = @'
+
+# 1. Write the Python validation logic out to a safe temporary script file
+$TempPyFile = Join-Path $Root 'verify_temp.py'
+@'
 from pathlib import Path
 import re, sys
 s = Path("/app/app.py").read_text(encoding="utf-8-sig")
 m = re.search(r"def trino_conn\(\):.*?(?=\ndef |\Z)", s, re.S)
 if not m:
-    # Supports the parameterized connection function in the final package.
     m = re.search(r"def trino_conn\(catalog=.*?(?=\ndef |\Z)", s, re.S)
 if not m:
     print("ERROR: trino_conn() was not found")
@@ -45,9 +44,16 @@ if not re.search(r"catalog\s*=\s*['\"]postgresql['\"]\s*,\s*schema\s*=\s*['\"]pu
     print("ERROR: operational Trino connection is not postgresql.public")
     sys.exit(1)
 print("PASS: operational connection uses postgresql.public")
-'@
-docker compose exec -T streamlit python -c $verify
-if ($LASTEXITCODE -ne 0) { throw "Container verification failed." }
+'@ | Set-Content -Path $TempPyFile -Encoding utf8
 
-Write-Host "`nRepair complete. Dashboard: http://localhost:8501" -ForegroundColor Green
-Write-Host "Backup: $BackupFile"
+# 2. Copy the validation script into the container and execute it
+docker-compose cp $TempPyFile streamlit:/app/verify_temp.py
+docker-compose exec -T streamlit python /app/verify_temp.py
+$VerifyStatus = $LASTEXITCODE
+
+# 3. Clean up the temporary files from both host and container
+Remove-Item -Path $TempPyFile -Force -ErrorAction SilentlyContinue
+docker-compose exec -T streamlit rm -f /app/verify_temp.py
+
+# 4. Enforce the validation check result
+if ($VerifyStatus -ne 0) { throw "Container verification failed." }
