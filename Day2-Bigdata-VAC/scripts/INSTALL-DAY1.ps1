@@ -1,0 +1,1 @@
+$ErrorActionPreference='Stop'; Set-Location "$PSScriptRoot\.."; $dc=(Get-Command docker-compose.exe -ErrorAction Stop).Source; & $dc up -d --no-build --pull never namenode datanode1 datanode2 datanode3 postgres kafka nifi debezium mongodb flink-jobmanager flink-taskmanager; & "$PSScriptRoot\INIT-LAB.ps1"; Write-Host 'Day 1 services started.' -ForegroundColor Green

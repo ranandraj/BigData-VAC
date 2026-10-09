@@ -1,0 +1,1 @@
+[CmdletBinding(SupportsShouldProcess)]param([switch]$Volumes); Set-Location "$PSScriptRoot\.."; $dc=(Get-Command docker-compose.exe -ErrorAction Stop).Source; if($Volumes){& $dc down -v --remove-orphans}else{& $dc down --remove-orphans}; Write-Host 'Lab reset completed. Volumes are preserved unless -Volumes is specified.' -ForegroundColor Green

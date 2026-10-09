@@ -1,0 +1,26 @@
+AR INFOTEK Advanced Big Data & Real-Time E-Commerce Analytics VAC
+v13 Final Delivery - Corrected and Verified Package
+
+15 Docker services
+Official Flink 2.1.1 image
+Flink Kafka SQL connector 5.0.0-2.1
+Streamlit image rebuilt from current package source by installer
+Versioned Streamlit image tag 1.1 to avoid stale-image reuse
+No custom Flink Docker build
+No Maven Flink build
+No MinIO / Iceberg REST dependency
+End-to-end Day 1 and Day 2 e-commerce lab
+Actual PostgreSQL + HDFS seed data
+Flink real-time KPIs and anomaly detection
+MongoDB + Streamlit real-time analytics
+Parquet + Iceberg + partitioning + schema evolution
+Trino analytics using PostgreSQL public schema and Iceberg ecommerce schema
+Airflow workflow and management report
+
+Final delivery corrections:
+- Dashboard operational queries use postgresql.public.
+- Sales Channel panel uses iceberg.ecommerce after schema evolution.
+- Iceberg initialization and Airflow source queries use postgresql.public.
+- Flink SQL submission preserves the official container entrypoint and verifies job status.
+- Dashboard rupee symbol encoding corrected.
+- FIX-STREAMLIT-TRINO.ps1 included for existing installations.

@@ -1,0 +1,1 @@
+$ErrorActionPreference='Stop'; Set-Location "$PSScriptRoot\.."; $dc=(Get-Command docker-compose.exe -ErrorAction Stop).Source; & $dc build streamlit; if($LASTEXITCODE -ne 0){throw 'Streamlit image build failed.'}; & $dc up -d --pull never mongodb trino streamlit airflow; & "$PSScriptRoot\INIT-ANALYTICS.ps1"; Write-Host 'Day 2 analytics services installed.' -ForegroundColor Green

@@ -1,0 +1,201 @@
+customer_id,name,city,state,registration_date,customer_segment
+C0001,Naveen Rao,Mysuru,Karnataka,2026-03-31,REGULAR
+C0002,Vijay Sharma,Delhi,Delhi,2026-06-14,PREMIUM
+C0003,Nisha Singh,Delhi,Delhi,2026-01-04,REGULAR
+C0004,Divya Kumar,Chennai,Tamil Nadu,2026-01-08,PREMIUM
+C0005,Divya Iyer,Mumbai,Maharashtra,2026-04-26,NEW
+C0006,Manoj Reddy,Madurai,Tamil Nadu,2025-12-29,NEW
+C0007,Manoj Iyer,Pune,Maharashtra,2026-06-25,REGULAR
+C0008,Divya Kumar,Madurai,Tamil Nadu,2025-09-03,PREMIUM
+C0009,Rahul Iyer,Chennai,Tamil Nadu,2026-05-09,REGULAR
+C0010,Ishita Iyer,Kochi,Kerala,2026-01-09,NEW
+C0011,Aditya Kumar,Hyderabad,Telangana,2026-01-15,REGULAR
+C0012,Meena Singh,Kochi,Kerala,2025-10-22,PREMIUM
+C0013,Karthik Iyer,Kochi,Kerala,2026-03-04,NEW
+C0014,Naveen Das,Chennai,Tamil Nadu,2026-07-02,PREMIUM
+C0015,Priya Kumar,Mumbai,Maharashtra,2025-10-07,REGULAR
+C0016,Harish Reddy,Madurai,Tamil Nadu,2026-07-04,PREMIUM
+C0017,Ananya Sharma,Bengaluru,Karnataka,2025-10-02,NEW
+C0018,Aditya Sharma,Coimbatore,Tamil Nadu,2025-10-15,NEW
+C0019,Asha Kumar,Mysuru,Karnataka,2025-09-19,NEW
+C0020,Naveen Menon,Delhi,Delhi,2025-11-08,REGULAR
+C0021,Vijay Nair,Pune,Maharashtra,2026-04-02,REGULAR
+C0022,Karthik Patel,Delhi,Delhi,2025-12-11,REGULAR
+C0023,Arun Rao,Bengaluru,Karnataka,2025-09-18,PREMIUM
+C0024,Rahul Das,Bengaluru,Karnataka,2026-04-15,PREMIUM
+C0025,Karthik Nair,Pune,Maharashtra,2026-06-28,NEW
+C0026,Meena Reddy,Mumbai,Maharashtra,2025-12-21,PREMIUM
+C0027,Asha Das,Pune,Maharashtra,2026-07-29,PREMIUM
+C0028,Meena Sharma,Madurai,Tamil Nadu,2026-05-26,REGULAR
+C0029,Divya Das,Bengaluru,Karnataka,2026-05-15,REGULAR
+C0030,Asha Iyer,Pune,Maharashtra,2026-02-08,NEW
+C0031,Harish Rao,Pune,Maharashtra,2026-03-27,NEW
+C0032,Kavya Patel,Bengaluru,Karnataka,2026-07-11,NEW
+C0033,Karthik Patel,Mumbai,Maharashtra,2026-05-12,PREMIUM
+C0034,Pooja Singh,Kochi,Kerala,2025-10-19,NEW
+C0035,Rahul Reddy,Bengaluru,Karnataka,2025-10-27,NEW
+C0036,Naveen Das,Mumbai,Maharashtra,2026-05-19,REGULAR
+C0037,Priya Patel,Hyderabad,Telangana,2026-01-28,NEW
+C0038,Vijay Iyer,Mumbai,Maharashtra,2026-06-11,REGULAR
+C0039,Kavya Menon,Madurai,Tamil Nadu,2026-05-15,NEW
+C0040,Ananya Singh,Hyderabad,Telangana,2026-07-21,NEW
+C0041,Kavya Iyer,Mumbai,Maharashtra,2026-03-19,NEW
+C0042,Aditya Kumar,Bengaluru,Karnataka,2025-12-05,NEW
+C0043,Manoj Nair,Coimbatore,Tamil Nadu,2026-02-27,NEW
+C0044,Arun Iyer,Coimbatore,Tamil Nadu,2026-01-10,REGULAR
+C0045,Rahul Patel,Pune,Maharashtra,2026-02-04,PREMIUM
+C0046,Aditya Das,Madurai,Tamil Nadu,2026-02-14,NEW
+C0047,Rohan Reddy,Bengaluru,Karnataka,2025-10-09,REGULAR
+C0048,Divya Menon,Chennai,Tamil Nadu,2025-12-23,REGULAR
+C0049,Kavya Menon,Mumbai,Maharashtra,2025-11-14,NEW
+C0050,Naveen Iyer,Delhi,Delhi,2026-03-25,NEW
+C0051,Arun Das,Delhi,Delhi,2025-10-31,PREMIUM
+C0052,Nisha Singh,Coimbatore,Tamil Nadu,2026-06-28,PREMIUM
+C0053,Asha Nair,Mumbai,Maharashtra,2026-05-31,PREMIUM
+C0054,Harish Patel,Pune,Maharashtra,2026-01-05,REGULAR
+C0055,Meena Das,Delhi,Delhi,2026-05-29,NEW
+C0056,Aditya Reddy,Delhi,Delhi,2025-09-21,PREMIUM
+C0057,Aditya Das,Pune,Maharashtra,2026-08-02,REGULAR
+C0058,Vijay Singh,Pune,Maharashtra,2025-10-10,PREMIUM
+C0059,Manoj Rao,Mumbai,Maharashtra,2025-12-19,PREMIUM
+C0060,Harish Rao,Coimbatore,Tamil Nadu,2026-05-08,PREMIUM
+C0061,Meena Das,Bengaluru,Karnataka,2025-09-12,PREMIUM
+C0062,Rahul Iyer,Mumbai,Maharashtra,2026-02-25,NEW
+C0063,Karthik Kumar,Coimbatore,Tamil Nadu,2026-07-10,NEW
+C0064,Asha Sharma,Kochi,Kerala,2025-12-12,REGULAR
+C0065,Vijay Singh,Mysuru,Karnataka,2025-11-22,REGULAR
+C0066,Karthik Kumar,Coimbatore,Tamil Nadu,2026-06-09,REGULAR
+C0067,Ananya Das,Coimbatore,Tamil Nadu,2025-12-08,NEW
+C0068,Sneha Sharma,Madurai,Tamil Nadu,2025-12-12,NEW
+C0069,Harish Das,Kochi,Kerala,2025-10-02,REGULAR
+C0070,Asha Das,Kochi,Kerala,2025-12-27,PREMIUM
+C0071,Ananya Rao,Kochi,Kerala,2025-12-15,REGULAR
+C0072,Rohan Das,Coimbatore,Tamil Nadu,2025-11-27,PREMIUM
+C0073,Rohan Rao,Coimbatore,Tamil Nadu,2026-06-24,PREMIUM
+C0074,Sneha Patel,Pune,Maharashtra,2026-02-12,REGULAR
+C0075,Rahul Reddy,Madurai,Tamil Nadu,2026-05-17,NEW
+C0076,Karthik Iyer,Delhi,Delhi,2026-07-01,REGULAR
+C0077,Suresh Das,Delhi,Delhi,2025-12-07,REGULAR
+C0078,Vijay Singh,Chennai,Tamil Nadu,2026-01-15,PREMIUM
+C0079,Naveen Singh,Chennai,Tamil Nadu,2025-12-01,NEW
+C0080,Meena Singh,Mumbai,Maharashtra,2025-12-31,PREMIUM
+C0081,Asha Iyer,Madurai,Tamil Nadu,2025-11-26,NEW
+C0082,Kavya Rao,Pune,Maharashtra,2026-07-19,REGULAR
+C0083,Aditya Reddy,Mumbai,Maharashtra,2025-12-06,NEW
+C0084,Pooja Kumar,Mysuru,Karnataka,2026-01-13,PREMIUM
+C0085,Arun Sharma,Mysuru,Karnataka,2025-09-07,REGULAR
+C0086,Manoj Reddy,Hyderabad,Telangana,2026-07-08,REGULAR
+C0087,Suresh Iyer,Delhi,Delhi,2025-12-13,REGULAR
+C0088,Aditya Patel,Mumbai,Maharashtra,2025-12-30,REGULAR
+C0089,Ishita Kumar,Bengaluru,Karnataka,2025-10-30,NEW
+C0090,Sneha Sharma,Mumbai,Maharashtra,2025-09-03,NEW
+C0091,Sneha Iyer,Chennai,Tamil Nadu,2026-07-23,PREMIUM
+C0092,Sneha Reddy,Hyderabad,Telangana,2025-12-03,PREMIUM
+C0093,Naveen Iyer,Bengaluru,Karnataka,2025-12-07,PREMIUM
+C0094,Nisha Reddy,Pune,Maharashtra,2025-09-26,PREMIUM
+C0095,Ananya Patel,Bengaluru,Karnataka,2026-06-08,PREMIUM
+C0096,Meena Menon,Chennai,Tamil Nadu,2026-01-22,REGULAR
+C0097,Rahul Menon,Coimbatore,Tamil Nadu,2025-09-15,NEW
+C0098,Meena Menon,Bengaluru,Karnataka,2026-06-02,PREMIUM
+C0099,Nisha Das,Chennai,Tamil Nadu,2025-12-26,PREMIUM
+C0100,Rahul Das,Mumbai,Maharashtra,2025-09-05,REGULAR
+C0101,Kavya Rao,Chennai,Tamil Nadu,2026-06-09,REGULAR
+C0102,Manoj Reddy,Mumbai,Maharashtra,2025-12-23,NEW
+C0103,Rohan Menon,Madurai,Tamil Nadu,2025-10-31,REGULAR
+C0104,Kavya Menon,Kochi,Kerala,2026-03-18,REGULAR
+C0105,Rahul Patel,Coimbatore,Tamil Nadu,2025-12-15,NEW
+C0106,Naveen Menon,Kochi,Kerala,2026-01-20,REGULAR
+C0107,Ishita Nair,Chennai,Tamil Nadu,2026-05-01,REGULAR
+C0108,Nisha Patel,Coimbatore,Tamil Nadu,2026-02-09,REGULAR
+C0109,Rohan Das,Mysuru,Karnataka,2026-07-28,PREMIUM
+C0110,Rahul Iyer,Coimbatore,Tamil Nadu,2026-01-06,REGULAR
+C0111,Sneha Rao,Madurai,Tamil Nadu,2025-09-06,PREMIUM
+C0112,Manoj Kumar,Kochi,Kerala,2026-06-16,REGULAR
+C0113,Aditya Iyer,Coimbatore,Tamil Nadu,2026-02-27,PREMIUM
+C0114,Nisha Rao,Mysuru,Karnataka,2025-10-23,PREMIUM
+C0115,Kavya Das,Mumbai,Maharashtra,2026-02-14,REGULAR
+C0116,Rohan Patel,Kochi,Kerala,2026-03-27,NEW
+C0117,Vijay Nair,Bengaluru,Karnataka,2026-06-02,PREMIUM
+C0118,Ananya Iyer,Madurai,Tamil Nadu,2026-04-14,PREMIUM
+C0119,Rohan Menon,Kochi,Kerala,2025-11-07,PREMIUM
+C0120,Divya Iyer,Pune,Maharashtra,2026-03-04,NEW
+C0121,Ananya Patel,Mumbai,Maharashtra,2026-07-26,PREMIUM
+C0122,Karthik Patel,Madurai,Tamil Nadu,2026-07-10,NEW
+C0123,Meena Reddy,Madurai,Tamil Nadu,2025-09-10,REGULAR
+C0124,Arun Menon,Bengaluru,Karnataka,2026-03-10,REGULAR
+C0125,Manoj Nair,Kochi,Kerala,2026-04-30,NEW
+C0126,Ishita Sharma,Pune,Maharashtra,2026-06-30,REGULAR
+C0127,Rahul Menon,Kochi,Kerala,2025-09-14,PREMIUM
+C0128,Karthik Reddy,Chennai,Tamil Nadu,2025-10-18,REGULAR
+C0129,Sneha Sharma,Bengaluru,Karnataka,2025-10-21,REGULAR
+C0130,Asha Menon,Mysuru,Karnataka,2026-04-09,PREMIUM
+C0131,Manoj Rao,Delhi,Delhi,2026-03-03,PREMIUM
+C0132,Meena Menon,Delhi,Delhi,2025-09-19,NEW
+C0133,Divya Iyer,Mysuru,Karnataka,2025-09-16,NEW
+C0134,Rahul Reddy,Pune,Maharashtra,2026-04-02,NEW
+C0135,Rahul Reddy,Madurai,Tamil Nadu,2026-08-01,REGULAR
+C0136,Asha Rao,Kochi,Kerala,2026-03-06,NEW
+C0137,Meena Patel,Coimbatore,Tamil Nadu,2025-12-13,NEW
+C0138,Rohan Menon,Coimbatore,Tamil Nadu,2026-04-23,REGULAR
+C0139,Pooja Iyer,Bengaluru,Karnataka,2025-09-05,NEW
+C0140,Karthik Sharma,Pune,Maharashtra,2026-07-03,NEW
+C0141,Asha Menon,Pune,Maharashtra,2026-03-08,REGULAR
+C0142,Manoj Patel,Bengaluru,Karnataka,2026-01-08,REGULAR
+C0143,Pooja Rao,Madurai,Tamil Nadu,2025-12-21,NEW
+C0144,Priya Singh,Mysuru,Karnataka,2026-02-18,PREMIUM
+C0145,Arun Sharma,Pune,Maharashtra,2026-04-07,PREMIUM
+C0146,Naveen Kumar,Mysuru,Karnataka,2026-03-18,PREMIUM
+C0147,Ananya Rao,Chennai,Tamil Nadu,2025-11-10,PREMIUM
+C0148,Rohan Reddy,Kochi,Kerala,2025-10-07,REGULAR
+C0149,Rahul Rao,Kochi,Kerala,2026-02-05,REGULAR
+C0150,Suresh Sharma,Mumbai,Maharashtra,2026-05-12,REGULAR
+C0151,Ishita Patel,Delhi,Delhi,2026-01-09,PREMIUM
+C0152,Manoj Sharma,Chennai,Tamil Nadu,2026-02-22,REGULAR
+C0153,Divya Singh,Mumbai,Maharashtra,2025-11-12,NEW
+C0154,Manoj Singh,Madurai,Tamil Nadu,2026-07-06,NEW
+C0155,Nisha Menon,Madurai,Tamil Nadu,2025-11-20,PREMIUM
+C0156,Priya Iyer,Kochi,Kerala,2026-03-19,PREMIUM
+C0157,Meena Rao,Hyderabad,Telangana,2025-11-27,NEW
+C0158,Asha Iyer,Chennai,Tamil Nadu,2026-05-13,REGULAR
+C0159,Arun Das,Madurai,Tamil Nadu,2026-01-06,NEW
+C0160,Divya Rao,Coimbatore,Tamil Nadu,2026-06-03,PREMIUM
+C0161,Ishita Patel,Hyderabad,Telangana,2025-11-15,PREMIUM
+C0162,Kavya Rao,Pune,Maharashtra,2025-12-04,NEW
+C0163,Pooja Reddy,Kochi,Kerala,2026-01-18,NEW
+C0164,Harish Reddy,Mysuru,Karnataka,2026-06-28,REGULAR
+C0165,Suresh Das,Delhi,Delhi,2026-03-19,NEW
+C0166,Meena Menon,Pune,Maharashtra,2025-10-10,PREMIUM
+C0167,Karthik Rao,Kochi,Kerala,2025-10-31,REGULAR
+C0168,Suresh Das,Mumbai,Maharashtra,2025-10-28,REGULAR
+C0169,Suresh Iyer,Kochi,Kerala,2026-04-02,PREMIUM
+C0170,Sneha Singh,Delhi,Delhi,2026-07-11,REGULAR
+C0171,Aditya Singh,Kochi,Kerala,2025-09-03,NEW
+C0172,Priya Reddy,Kochi,Kerala,2025-11-18,PREMIUM
+C0173,Divya Rao,Mumbai,Maharashtra,2026-06-12,PREMIUM
+C0174,Arun Reddy,Kochi,Kerala,2026-01-05,PREMIUM
+C0175,Rahul Rao,Hyderabad,Telangana,2026-03-20,REGULAR
+C0176,Aditya Sharma,Mysuru,Karnataka,2026-02-15,PREMIUM
+C0177,Aditya Nair,Madurai,Tamil Nadu,2025-09-16,PREMIUM
+C0178,Pooja Kumar,Kochi,Kerala,2025-09-20,NEW
+C0179,Meena Iyer,Coimbatore,Tamil Nadu,2026-06-17,REGULAR
+C0180,Divya Rao,Bengaluru,Karnataka,2026-05-09,PREMIUM
+C0181,Arun Kumar,Pune,Maharashtra,2026-02-17,NEW
+C0182,Nisha Nair,Pune,Maharashtra,2025-12-25,NEW
+C0183,Harish Singh,Coimbatore,Tamil Nadu,2025-10-17,PREMIUM
+C0184,Ananya Reddy,Hyderabad,Telangana,2026-06-23,PREMIUM
+C0185,Asha Iyer,Delhi,Delhi,2025-11-21,PREMIUM
+C0186,Sneha Rao,Hyderabad,Telangana,2025-09-10,REGULAR
+C0187,Rohan Kumar,Kochi,Kerala,2025-12-07,REGULAR
+C0188,Ananya Sharma,Madurai,Tamil Nadu,2025-12-19,REGULAR
+C0189,Meena Singh,Mysuru,Karnataka,2026-03-27,REGULAR
+C0190,Vijay Singh,Pune,Maharashtra,2025-11-28,NEW
+C0191,Aditya Menon,Coimbatore,Tamil Nadu,2026-01-31,PREMIUM
+C0192,Meena Kumar,Pune,Maharashtra,2026-01-12,REGULAR
+C0193,Naveen Kumar,Chennai,Tamil Nadu,2025-09-26,PREMIUM
+C0194,Meena Iyer,Kochi,Kerala,2025-09-26,REGULAR
+C0195,Vijay Menon,Coimbatore,Tamil Nadu,2026-03-27,PREMIUM
+C0196,Divya Kumar,Hyderabad,Telangana,2026-02-25,REGULAR
+C0197,Naveen Nair,Chennai,Tamil Nadu,2026-05-27,NEW
+C0198,Suresh Singh,Pune,Maharashtra,2026-05-05,NEW
+C0199,Pooja Nair,Hyderabad,Telangana,2025-11-04,PREMIUM
+C0200,Ananya Patel,Pune,Maharashtra,2025-11-29,REGULAR

@@ -1,0 +1,61 @@
+product_id,product_name,category,price
+P0001,Laptop 1,Electronics,70700
+P0002,Earbuds 2,Accessories,14050
+P0003,Smartphone 3,Electronics,56450
+P0004,Laptop 4,Electronics,9700
+P0005,Power Bank 5,Accessories,57550
+P0006,USB Hub 6,Accessories,62050
+P0007,Game Controller 7,Gaming,43150
+P0008,Air Purifier 8,Home,72300
+P0009,USB Hub 9,Accessories,40650
+P0010,Mixer 10,Home,21150
+P0011,Air Purifier 11,Home,9650
+P0012,Mouse 12,Electronics,80650
+P0013,Air Purifier 13,Home,69550
+P0014,Camera 14,Electronics,8300
+P0015,Coffee Maker 15,Home,84200
+P0016,Coffee Maker 16,Home,19000
+P0017,Laptop 17,Electronics,63100
+P0018,Air Purifier 18,Home,81400
+P0019,Camera 19,Electronics,27050
+P0020,Mixer 20,Home,35750
+P0021,USB Hub 21,Accessories,26000
+P0022,Tablet 22,Electronics,51150
+P0023,Earbuds 23,Accessories,44400
+P0024,Coffee Maker 24,Home,21550
+P0025,Air Purifier 25,Home,22450
+P0026,Mouse 26,Electronics,38650
+P0027,Monitor 27,Electronics,86850
+P0028,Mixer 28,Home,62600
+P0029,Gaming Keyboard 29,Gaming,14350
+P0030,Earbuds 30,Accessories,71000
+P0031,Coffee Maker 31,Home,41200
+P0032,Gaming Mouse 32,Gaming,21550
+P0033,Power Bank 33,Accessories,47350
+P0034,Smartphone 34,Electronics,15300
+P0035,USB Hub 35,Accessories,40650
+P0036,Camera 36,Electronics,36800
+P0037,Gaming Headset 37,Gaming,24550
+P0038,Smartphone 38,Electronics,65050
+P0039,Vacuum Cleaner 39,Home,11400
+P0040,Game Controller 40,Gaming,43600
+P0041,Coffee Maker 41,Home,72600
+P0042,Keyboard 42,Electronics,80100
+P0043,Earbuds 43,Accessories,36100
+P0044,Power Bank 44,Accessories,90600
+P0045,Mouse 45,Electronics,46900
+P0046,Mouse 46,Electronics,83600
+P0047,Mixer 47,Home,6350
+P0048,Smartphone 48,Electronics,69750
+P0049,Tablet 49,Electronics,13000
+P0050,Gaming Headset 50,Gaming,16450
+P0051,Game Controller 51,Gaming,88300
+P0052,USB Hub 52,Accessories,30250
+P0053,Smart Light 53,Home,85550
+P0054,Gaming Laptop 54,Gaming,24250
+P0055,Mouse 55,Electronics,2900
+P0056,Power Bank 56,Accessories,21600
+P0057,Laptop 57,Electronics,22450
+P0058,Mouse 58,Electronics,7550
+P0059,Speaker 59,Accessories,63850
+P0060,Power Bank 60,Accessories,13350
